@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="pepadocs.main_template">
+            <div class="o_control_panel" style="height:100%;">
+                <!-- Your HTML and iframe here -->
+                <iframe id="pepadocsIframe" allow="camera;microphone;fullscreen;geolocation" src="" style="width:100%; height:100%; border:none;"></iframe>
+            </div>
+    </t>
+</templates>

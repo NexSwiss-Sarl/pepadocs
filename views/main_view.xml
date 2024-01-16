@@ -1,0 +1,27 @@
+<odoo>
+    <record id="pepadocs_refresh_action" model="ir.actions.client">
+        <field name="name">Refresh Menus</field>
+        <field name="tag">pepadocs.refresh_menus</field>
+    </record>
+    <record id="pepadocs_general_action" model="ir.actions.client">
+        <field name="name">Please refresh</field>
+        <field name="tag">pepadocs.refresh_menus</field>
+    </record>
+    <record id="pepadocs_open_pepadocs" model="ir.actions.client">
+        <field name="name">Please refresh</field>
+        <field name="tag">pepadocs.refresh_menus</field>
+    </record>
+    <menuitem id="menu_pepadocs_root" name="Pepadocs">
+        <menuitem id="menu_pepadocs_completed" name="Rapports complétés" sequence="10">
+            <menuitem id="menu_pepadocs_completed_item" action="pepadocs_general_action"/>
+        </menuitem>
+        <menuitem id="menu_pepadocs_models" name="Compléter un rapport" sequence="20">
+            <menuitem id="menu_pepadocs_models_item" action="pepadocs_general_action"/>
+        </menuitem>
+        <menuitem id="menu_pepadocs_calendars" name="Planning" sequence="30">
+            <menuitem id="menu_pepadocs_calendars_item" name="Planning" action="pepadocs_general_action"/>
+        </menuitem>
+        <menuitem id="menu_pepadocs_ouvrir" name="Ouvrir Pepadocs" action="pepadocs_open_pepadocs" sequence="40"/>
+        <menuitem id="menu_pepadocs_refresh" name="Refresh" action="pepadocs_refresh_action" sequence="50"/>
+    </menuitem>
+</odoo>

@@ -1,0 +1,16 @@
+<odoo>
+    <record id="view_users_form_inherit_pepadocs" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.pepadocs</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Pepadocs">
+                    <group>
+                        <field name="pepadocs_user_id"/>
+                    </group>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>

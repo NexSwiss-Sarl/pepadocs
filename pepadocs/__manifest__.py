@@ -4,7 +4,7 @@
 {
     'name': 'pepadocs',
     'version': '15.0.1.0.0',
-    'category': 'services/pepadocs',
+    'category': 'services',
     'sequence': 1,
     'support':'contact@nexswiss.ch',
     'summary': 'Digital intervention reports',

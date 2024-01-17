@@ -25,7 +25,7 @@
     'demo': [
     ],
     'css': [],
-    'images': ['static/images/banner.png', 'pepadocs/static/description/icon.png','pepadocs/static/description/main_screenshot.png'],
+    'images': ['static/description/banner.png', 'static/description/icon.png','static/description/main_screenshot.png'],
     'assets': {
         'web.assets_backend': [
             'pepadocs/static/src/js/load_iframe.js',

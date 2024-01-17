@@ -57,6 +57,28 @@ class pepadocsTools(models.TransientModel):
         return self.env.user.has_group('base.group_system')
 
     @api.model
+    def uninstall_hook(self, env):
+
+
+        parent_menu_completed = env.ref('pepadocs.menu_pepadocs_completed')
+        parent_menu_models = env.ref('pepadocs.menu_pepadocs_models')
+        parent_menu_calendars = env.ref('pepadocs.menu_pepadocs_calendars')
+
+        existing_parent_menu_completed = env['ir.ui.menu'].search([('parent_id', '=', parent_menu_completed.id)])
+        existing_parent_menu_completed.unlink()
+
+        existing_parent_menu_models = env['ir.ui.menu'].search([('parent_id', '=', parent_menu_models.id)])
+        existing_parent_menu_models.unlink()
+
+        existing_parent_menu_calendars = env['ir.ui.menu'].search([('parent_id', '=', parent_menu_calendars.id)])
+        existing_parent_menu_calendars.unlink()
+
+        config_parameters = env['ir.config_parameter'].sudo()
+        keys_to_remove = ['pepadocs.idPage', 'pepadocs.webdomain', 'pepadocs.id', 'pepadocs.key', 'pepadocs.autoSyncEmployees', 'pepadocs.syncWithModoGroupId']
+        for key in keys_to_remove:
+            config_parameters.search([('key', '=', key)]).unlink()
+
+    @api.model
     def refresh_dynamic_menus(self):
         webdomain = self.env['ir.config_parameter'].sudo().get_param('pepadocs.webdomain')
         if not webdomain:
@@ -118,7 +140,7 @@ class pepadocsTools(models.TransientModel):
 
         existing_action = self.env.ref('pepadocs.pepadocs_open_pepadocs')  # Replace 'module_name' with the actual module name
         existing_action.write({
-            'name': 'Ouvrir Pepadocs',
+            'name': 'Open Pepadocs',
             'tag': 'pepadocs.load_iframe',
             'context': json.dumps({'webdomain':webdomain,'what': 'openPepadocs'})
         })

@@ -36,8 +36,6 @@ odoo.define('pepadocs.logout', function (require) {
 });
 
 
-
-
 odoo.define('pepadocs.refreshMenuAction', function (require) {
     'use strict';
 
@@ -63,7 +61,7 @@ odoo.define('pepadocs.refreshMenuAction', function (require) {
                             message: "Menus refreshed successfully, please reload page.",
                             sticky: true
                          });
-                         $('.o_content').append("Rechargez la page svp, puis cliquez sur un autre menu.");
+                         $('.o_content').append('<br><div class="oe_demo oe_picture oe_screenshot">                       <center><img src="/pepadocs/static/description/icon.png" style="max-height: 400px; object-fit: contain;"></center>                     </div><br><div style="margin-left:auto;margin-right:auto; max-width:600px;"><center>Please reload the page, then click on another menu. <br><br>If you didn\'t set up pepadocs yet, please visit your Odoo Settings and set up Pepadocs.<br>Check-out our <a target="_blank" href="https://pepadocs.com/en/guides/category/odoo-with-pepadocs-62">Blog post</a> to learn more or contact us if wished <a href="mailto:contact@nexswiss.ch">contact@nexswiss.ch</a>. </center></div>');
                          //infinite redirection window.location.reload();
                     });
                 } else {
@@ -120,7 +118,7 @@ odoo.define('pepadocs.loadIframe', function(require) {
                 
                 }).then(function (result) {
                     if(result.isUserToSync || result.error == "userIdToSync"){
-                        if(confirm('Pour utiliser Pepadocs avec odoo, veuillez vous créer un compte pepadocs.com puis synchroniser ce dernier avec odoo')){
+                        if(confirm('To use Pepadocs with odoo, please create a pepadocs.com account and synchronize it with odoo.')){
                             window.location.href = 'https://'+result.webdomain+'/openWindow/Login/ERPSync/'+result.id_page+'_-_'+result.odoouser+'_-_'+result.webhookcode+'_-_'+btoa(location.origin+'/pepadocs/webhook')+'_-_'+btoa(location.href);
                         }
                     }else if(result.error){

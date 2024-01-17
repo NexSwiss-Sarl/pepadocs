@@ -1,3 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_pepadocs_tools_user,pepadocs.tools.user,model_pepadocs_tools,,1,0,0,0
 access_pepadocs_tools_admin,pepadocs.tools.admin,model_pepadocs_tools,base.group_system,1,1,1,1
+access_user_webhook_code_user,user_webhook_code_user,model_user_webhook_code,,0,0,0,0
+access_user_webhook_code_admin,user_webhook_code_admin,model_user_webhook_code,base.group_system,0,0,0,0

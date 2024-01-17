@@ -80,6 +80,7 @@ class PepadocsController(http.Controller):
                     })
 
                     if json_response.get('status') == 'success' and json_response.get('success'):
+                        odoo_user_record = odoo_user_record.with_context(from_controller=True)
                         odoo_user_record.sudo().write({'pepadocs_user_id': int(pepadocsUser)})
 
 
@@ -95,7 +96,7 @@ class PepadocsController(http.Controller):
                             if json_response2.get('status') == 'success' and json_response2.get('success'):
                                 return json.dumps({'status': 'success','success':True})
                             else:
-                                return json.dumps({'status': 'error', 'error': 'Votre compte a été synchronisé, mais une erreur est survenue empêchant votre ajout au bon groupe: '+json_response2.get('error')})
+                                return json.dumps({'status': 'error', 'error': 'Your account has been synchronized, but an error has occurred preventing you from being added to the correct group: '+json_response2.get('error')})
                         else:
                             return json.dumps({'status': 'success','success':True})
                     else:
@@ -153,7 +154,7 @@ class PepadocsController(http.Controller):
 
 
         if user<1 and autoSyncEmployees != 'True':
-            return {'error':"Ce compte odoo n'est pas synchronisé avec un compte pepadocs, veuillez contacter votre administrateur si vous avez besoin d'accéder à pepadocs."}
+            return {'error':"This odoo account is not synchronized with a pepadocs account. Please contact your administrator if you need access to pepadocs."}
         elif user<1 and autoSyncEmployees == 'True':
 
             if user_webhook_code:

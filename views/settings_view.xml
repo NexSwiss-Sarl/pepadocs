@@ -5,23 +5,23 @@
         <field name="inherit_id" ref="base.res_config_settings_view_form"/>
         <field name="arch" type="xml">
             <xpath expr="//div[hasclass('settings')]" position="inside">
-                <div class="app_settings_block" data-string="Pepadocs Settings" string="Pepadocs"  data-key="pepadocs_settings">
-                    <h2>Paramètres de Pepadocs</h2>
+                <div class="app_settings_block" data-string="Pepadocs Settings" string="Pepadocs"  data-key="pepadocs">
+                    <h2>Pepadocs parameters</h2>
                     <div class="row mt16 o_settings_container">
                         <div class="col-12 col-lg-6 o_setting_box">
                             <div class="o_setting_right_pane">
                                 <div class="text-muted">
-                                    <span>1. Rendez-vous sur pepadocs, créez vous un compte, puis créez une entité. </span>
+                                    <span>1. Go to pepadocs, create an account, then create an entity. </span>
                                     <a href="https://pepadocs.com/inscription" target="_blank">Inscription Pepadocs</a>
                                 </div>
                                 <div class="text-muted">
-                                    <span>2. Dans votre panel d'entité, allez sous Panel - Configuration Générale - SiteWeb / Espace de collaboration. Puis complétez les informations demandées pour créer votre sous domaine pepadocs.</span>
+                                    <span>2. In your entity panel, go to Panel - General configuration - Website / Collaboration space. Then fill in the required information to create your pepadocs subdomain.</span>
                                 </div>
-                                <span class="o_form_label">Sous domaine (par ex: monentreprise.pepadocs.com)</span>
+                                <span class="o_form_label">Subdomain (e.g. mycompany.pepadocs.com)</span>
                                 <field name="pepadocs_webdomain"/>
                                 <br />
                                 <div class="text-muted">
-                                    <span>3. Obtenez vos infos d'API sous "Connecteurs et API" dans le menu de votre panel d'entité: </span>
+                                    <span>3. Get your API info under "Connectors and APIs" in your entity panel menu:</span>
                                 </div>
                                 <span class="o_form_label">API id</span>
                                 <field name="pepadocs_id"/>
@@ -33,34 +33,36 @@
                                 <field name="pepadocs_idPage"/>
                                 <br />
                                 <div class="text-muted">
-                                    <span>4. Une fois la configuration sauvegardée ici, chargez l'application odoo Pepadocs et cliquez sur le bouton refresh. Rechargez ensuite la page.</span>
+                                    <span>4. Once the configuration has been saved here, load the odoo Pepadocs application and click on the refresh button. Then reload the page.</span>
                                 </div>
                                 <br />
                                 <div class="text-muted">
-                                    <span>5. Vous pouvez à présent créer vos modèles de rapports et les gérer depuis l'application Odoo Pepadocs. Vous pouvez aussi utiliser l'application mobile Pepadocs pour compléter les documents.</span>
+                                    <span>5. You can now create your report templates and manage them from the Odoo Pepadocs application. You can also use the Pepadocs mobile application to complete your documents.</span>
                                 </div>
                                 <br />
                                 <div class="text-muted">
-                                    <span>N'oubliez pas de cliquer sur Refresh dans l'application Pepadocs de Odoo quand vous modifiez vos modèls ou paramètres.</span>
+                                    <span>Don't forget to click on Refresh in the Odoo Pepadocs application when you modify your templates or settings.</span>
                                 </div>
                             </div>
                         </div>
                         <div class="col-12 col-lg-6 o_setting_box">
                             <div class="o_setting_right_pane">
                                 <div class="text-muted">
-                                    <span>Dans le profil de vos utilisateurs odoo (et non de vos employés), vous pouvez indiquer leur id Pepadocs. Si vous souhaitez que chaque employé connecte lui-même son compte pepadocs à Odoo, activez cette option.</span>
-                                    <span class="o_form_label">Activer la synchronisation des employés</span>
+                                    <span>In the profile of your odoo users (not your employees), you can indicate their Pepadocs id. If you want each employee to connect his or her own pepadocs account to Odoo, enable this option.</span>
+                                    <span class="o_form_label">Enable employee synchronization</span>
                                     <field name="pepadocs_autoSyncEmployees"/>
                                     <br />
                                 </div>
                                 <div class="text-muted">
-                                    <span>Vous pouvez également définir un groupe pepadocs dans lequel les nouveaux employés connectant eux-même leur compte à Pepadocs sont ajoutés. Pour ce faire, indiquez l'id du groupe. (Trouvez l'id du groupe en regardant l'url: https://monentreprise.pepadocs.com/fr/config/ModoGroups/Group-group_29 et donc 29 est l'id). Cela ne marchera que lorsqu'un employé se synchronise lui-même à pepadocs.</span>
-                                    <span class="o_form_label">id du groupe par défaut</span>
+                                    <span>You can also define a pepadocs group to which new employees who connect their own account to Pepadocs are added. To do this, enter the group id. (Find the group id by looking at the url: https://monentreprise.pepadocs.com/fr/config/ModoGroups/Group-group_29 and so 29 is the id). This will only work when an employee synchronizes himself to pepadocs.</span>
+                                    <span class="o_form_label">default group id</span>
                                     <field name="pepadocs_syncWithModoGroupId"/>
                                     <br />
                                 </div>
                                 <div class="text-muted">
-                                    <span>Pour retirer l'accès à Pepadocs d'un employé, retirez le de tous vos groupes pepadocs. (Toutefois, si la synchronisation automatique est activée et qu'il dispose toujours d'un compte Odoo chez vous, il pourra se recérer un compte pepadocs synchronisé)</span>
+                                    <span>To remove an employee's access to Pepadocs, remove them from all your pepadocs groups. (However, if automatic synchronization is enabled and the employee still has an Odoo account with you, he or she will be able to recreate a synchronized pepadocs account.)</span>
+                                    <br /><br />
+                                    <span>More help can be found <a target="_blank" href="https://pepadocs.com/en/guides/category/odoo-with-pepadocs-62">here</a> or by email <a href="mailto:contact@nexswiss.ch">contact@nexswiss.ch</a></span>
                                 </div>
                             </div>
                         </div>
